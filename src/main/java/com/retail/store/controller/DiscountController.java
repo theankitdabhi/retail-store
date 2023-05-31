@@ -1,6 +1,7 @@
 package com.retail.store.controller;
 
 import com.retail.store.modal.Bill;
+import com.retail.store.modal.NetAmount;
 import com.retail.store.service.DiscountService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -10,7 +11,6 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public class DiscountController {
 
-
     private final DiscountService discountService;
 
     @Autowired
@@ -19,7 +19,7 @@ public class DiscountController {
     }
     
     @PostMapping("/calculateNetPayableAmount")
-    public double calculateNetPayableAmount(@RequestBody Bill bill) {
+    public NetAmount calculateNetPayableAmount(@RequestBody Bill bill) {
         return discountService.calculateNetPayableAmount(bill);
     }
 }

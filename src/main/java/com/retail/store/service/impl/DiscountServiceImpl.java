@@ -1,6 +1,7 @@
 package com.retail.store.service.impl;
 
 import com.retail.store.modal.Bill;
+import com.retail.store.modal.NetAmount;
 import com.retail.store.service.DiscountService;
 import org.springframework.stereotype.Service;
 
@@ -8,7 +9,7 @@ import org.springframework.stereotype.Service;
 public class DiscountServiceImpl implements DiscountService {
 
     @Override
-    public double calculateNetPayableAmount(Bill bill) {
+    public NetAmount calculateNetPayableAmount(Bill bill) {
         try {
             double discount = 0;
             if (!bill.isGroceries()) {
@@ -18,16 +19,16 @@ public class DiscountServiceImpl implements DiscountService {
                 }
             }
             discount = calculateDiscountOnTotalAmount(bill, discount);
-            double netPayableAmount = bill.totalAmount() - discount;
-            return Math.max(netPayableAmount, 0);
+            double netPayableAmount = bill.amount() - discount;
+            return new NetAmount(Math.max(netPayableAmount, 0));
         } catch (Exception e) {
             throw new RuntimeException(e);
         }
     }
 
     private static double calculateDiscountOnTotalAmount(Bill bill, double discount) {
-        if (bill.totalAmount() > 100) {
-            discount += (bill.totalAmount() / 100) * 5;
+        if (bill.amount() > 100) {
+            discount += (bill.amount() / 100) * 5;
         }
         return discount;
     }
@@ -39,7 +40,7 @@ public class DiscountServiceImpl implements DiscountService {
      * @return
      */
     private double calculatePercentageBasedDiscount(Bill bill) {
-        Double totalAmount = bill.totalAmount();
+        Double totalAmount = bill.amount();
         double discount = 0;
         switch (bill.user().roleEnum()) {
             case EMPLOYEE -> discount = totalAmount * 0.3;
@@ -55,7 +56,7 @@ public class DiscountServiceImpl implements DiscountService {
      * @return
      */
     private double calculateYearsBasedDiscount(Bill bill) {
-        Double totalAmount = bill.totalAmount();
+        Double totalAmount = bill.amount();
         double discount = 0;
         // Check user's customer duration and apply the discount if applicable
         if (bill.user().isCustomerOverTwoYears()) {

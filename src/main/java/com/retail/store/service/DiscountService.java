@@ -1,7 +1,8 @@
 package com.retail.store.service;
 
 import com.retail.store.modal.Bill;
+import com.retail.store.modal.NetAmount;
 
 public interface DiscountService {
-    double calculateNetPayableAmount(Bill bill);
+    NetAmount calculateNetPayableAmount(Bill bill);
 }
