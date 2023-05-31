@@ -98,6 +98,6 @@ Click Save.
 
 **UML Diagram:**
 
-![uml_retail_shop drawio](https://github.com/theankitdabhi/retail-store/assets/53808622/51403c22-7ed9-499e-b347-84f049e6b5d2)
+![uml_retail_shop](https://github.com/theankitdabhi/retail-store/assets/53808622/f6ff00f0-2390-49f9-9f46-124d4214b4ec)
 
 Feel free to customize the API request body as per your specific requirements.
