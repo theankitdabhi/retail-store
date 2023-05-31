@@ -31,7 +31,7 @@ Example request body:
 Response Body:
 The response body will be a JSON object with the following property:
 
-`netPayableAmount` (number): The final amount to be paid after applying the discounts.\
+`netPayableAmount` (number): The final amount to be paid after applying the discounts.
 
 Example response body:
 ```
