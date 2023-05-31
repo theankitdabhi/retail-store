@@ -96,4 +96,7 @@ If there are several projects opened in the same window, make sure that the sugg
 Click Save.
 ![image](https://github.com/ankit-7span/retail-store/assets/115085627/e0d89646-e0c0-4269-8dfe-3ff31589c1b0)
 
+**UML Diagram:**
+![uml_retail_shop drawio](https://github.com/theankitdabhi/retail-store/assets/53808622/51403c22-7ed9-499e-b347-84f049e6b5d2)
+
 Feel free to customize the API request body as per your specific requirements.
