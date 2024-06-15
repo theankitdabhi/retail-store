@@ -56,22 +56,23 @@ Building and Running the Application
 To build and run the application, follow these steps:
 
 **Clone the repository:**
-```
+
+```shell
 git clone <repository-url>
 ```
 
 **Navigate to the project directory:**
-```
+```shell
 cd retail-api
 ```
 
 **Build the application:**
-```
+```shell
 ./mvnw clean package
 ```
 
 **Run the application:**
-```
+```shell
 ./mvnw spring-boot:run
 ```
 
@@ -80,7 +81,7 @@ The application will start running on http://localhost:9090.
 **Testing:**
 Unit tests have been provided for the DiscountServiceImpl class to ensure the correct calculation of the net payable amount. To run the tests, use the following command:
 
-```
+```shell
 ./mvnw test
 ```
 **Generate the report:**
